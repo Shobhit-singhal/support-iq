@@ -34,8 +34,17 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="mx-auto mt-12 max-w-sm bg-slate-900/70 border border-slate-800 rounded-xl p-8 shadow-lg backdrop-blur-sm">
-      <h1 className="mb-6 text-xl font-semibold text-white">Sign in to SupportIQ</h1>
+
+    <div className="flex-1 flex flex-col items-center justify-center h-full min-h-[calc(100vh-100px)]">
+      <Link href="/" className="flex items-center gap-3 mb-8 hover:opacity-80 transition-opacity">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-600/20">
+          <span className="text-2xl font-bold text-white">S</span>
+        </div>
+        <span className="text-3xl font-bold text-white tracking-tight">SupportIQ</span>
+      </Link>
+      
+      <div className="w-full max-w-md bg-slate-900/70 border border-slate-800 rounded-3xl p-10 shadow-2xl backdrop-blur-xl">
+      <h1 className="mb-8 text-2xl font-semibold text-white text-center">Sign in to your account</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-300">
@@ -89,6 +98,7 @@ export default function LoginPage() {
           Register
         </Link>
       </p>
+      </div>
     </div>
   );
 }

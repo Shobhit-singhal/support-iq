@@ -46,9 +46,17 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="mx-auto mt-12 max-w-sm bg-slate-900/70 border border-slate-800 rounded-xl p-8 shadow-lg backdrop-blur-sm">
-      <h1 className="mb-2 text-xl font-semibold text-white">Create your SupportIQ account</h1>
-      <p className="mb-6 text-sm text-slate-400">
+    <div className="flex-1 flex flex-col items-center justify-center h-full min-h-[calc(100vh-100px)] pt-12 pb-12">
+      <Link href="/" className="flex items-center gap-3 mb-8 hover:opacity-80 transition-opacity">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-600/20">
+          <span className="text-2xl font-bold text-white">S</span>
+        </div>
+        <span className="text-3xl font-bold text-white tracking-tight">SupportIQ</span>
+      </Link>
+      
+      <div className="w-full max-w-md bg-slate-900/70 border border-slate-800 rounded-3xl p-10 shadow-2xl backdrop-blur-xl">
+      <h1 className="mb-2 text-2xl font-semibold text-white text-center">Create an account</h1>
+      <p className="mb-8 text-sm text-slate-400 text-center">
         Sign up to submit and track support tickets. Agent and admin accounts are
         created by an administrator.
       </p>
@@ -82,6 +90,7 @@ export default function RegisterPage() {
         Already have an account?{" "}
         <Link href="/login" className="text-indigo-400 hover:text-indigo-300 underline">Log in</Link>
       </p>
+      </div>
     </div>
   );
 }

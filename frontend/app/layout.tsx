@@ -25,10 +25,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-950 text-slate-100" suppressHydrationWarning>
+      <body className="min-h-full bg-slate-950 text-slate-100 relative" suppressHydrationWarning>
+        {/* Ambient background glow so the blur has something to reflect */}
+        <div className="fixed inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(99,102,241,0.12),rgba(15,23,42,0))]" />
+        
         <AuthProvider>
-          <NavBar />
-          <main className="w-full flex-1 px-8 py-8 max-w-[1400px] mx-auto">{children}</main>
+          <div className="relative z-10 flex min-h-screen w-full max-w-[1600px] mx-auto border-x border-slate-800/60 bg-slate-950/40 shadow-2xl shadow-black/50">
+            <NavBar />
+            <main className="flex-1 w-full px-6 sm:px-12 py-10 overflow-x-hidden">{children}</main>
+          </div>
         </AuthProvider>
       </body>
     </html>
